@@ -1,7 +1,7 @@
 env:
   # The one variable that separates the arms: on baseline, action-checkout
   # skips its Set up Chalk step entirely.
-  CHALK_ON: ${{ github.event_name == 'workflow_dispatch' && inputs.leg != 'baseline' }}
+  CHALK_ON: ${{ inputs.leg == 'instrumented' }}
   RUBY_VERSION: 3.3
   DATABASE_URL: postgres://postgres:postgres@localhost/greenlight-actions
   RAILS_ENV: test
